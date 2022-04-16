@@ -1,6 +1,7 @@
 import sys
-from Menu import *
-from Task import TaskList, Task
+from TaskOperations.Menu import *
+from TaskOperations.TaskMethods import Task
+from TaskOperations.TaskListMethods import TaskList
 from colorama import Fore, init
 import os
 
@@ -15,11 +16,11 @@ while True:
     try:
         user_choice = int(input(f"{Fore.LIGHTBLUE_EX}Which one do you choose ?:{Fore.WHITE} "))
         if user_choice > 6 or user_choice < 1:
-            print(f"{Fore.RED}You have to choice the right number")
+            print(f"{Fore.RED}!!! YOU HAVE TO CHOICE CORRECT NUMBER !!!")
             continue
     except ValueError:
         os.system('cls')
-        print(f"{Fore.RED}!!! You have to use number !!!")
+        print(f"{Fore.RED}!!! YOU HAVE TO USE NUMBER  !!!")
     else:
         if user_choice == 1:
             os.system('cls')
@@ -52,5 +53,3 @@ while True:
                 Task.delete_done_tasks()
         elif user_choice == 6:
             sys.exit()
-        else:
-            print(f"{Fore.RED}!!! PLEASE PROVIDE NUMBER FROM 1-6 !!!")
